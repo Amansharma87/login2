@@ -1,0 +1,17 @@
+
+  <div class="a">
+<form  class="login-page" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <h3>login</h3>
+  
+    <input ngModel name="username" type="email" placeholder="username" required ><br>
+    <!-- <ion-icon name="lock-closed"></ion-icon> -->
+    <input ngModel name="password" type="password" placeholder="password" required><br>
+    <input type="checkbox" id="Remember">
+              <label for="Remember">Remember</label><br>
+              
+    <button [disabled]="!f.valid" type="submit" ><a routerLink="admin">login</a></button>
+    <a href="#">Forget-password!</a>
+  
+  </form>
+  
+</div>

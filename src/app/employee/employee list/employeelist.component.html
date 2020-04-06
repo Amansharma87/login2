@@ -1,0 +1,36 @@
+<body>
+  
+
+<h1>Hey Admin</h1>
+<p>Want to Add a Employee!!</p>
+<div *ngIf="server" class="employeeform">
+<form class="eform"#f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h3>Add Employee</h3>
+    <input ngModel name="name" type="text" id="name" placeholder="Name" required> <br>
+    <input ngModel name="position" type="text" id="position" placeholder="Position"required> <br>
+    <input ngModel name="office"type="text" id="office" placeholder="Office"required><br>
+    <input ngModel name="salary"type="number" id="salary" placeholder="Salary"required><br>
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+
+</form>
+</div>
+<button [disabled]="server" (click)="adde()" >Add</button>
+ <h2>Registered Employee</h2>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Office</th>
+    <th>Salary</th>
+    <th>Edit</th>
+  </tr>
+  <tr *ngFor="let e of employee">
+    <td><a href="">{{ e.name}}</a></td>
+    <td>{{ e.position}}</td>
+    <td>{{e.office}}</td>
+    <td>{{e.salary}}</td>
+    <td><button>delete</button></td>
+  </tr>
+ 
+</table>
+</body>
